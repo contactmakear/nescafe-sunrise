@@ -54,7 +54,9 @@ console.log("init")
 // const soccerPlayerVideo = document.querySelector('#penguinsledding')
 clickme.onclick = () => {
     console.log("click")
+    soccerPlayer.setAttribute("visible","true")
     penguinsledding.play()
+
 }
 
 this.material = new THREE.ShaderMaterial({
@@ -133,7 +135,7 @@ transparent: true,
               <a-entity  id="soccerPlayer" material="shader: transparent-video;src:#penguinsledding;" geometry="primitive: box;
               width: 1.2;
               height: 1.4;
-              depth:0;" position="0 0 0" > </a-entity>
+              depth:0;" position="0 0 0" visible="false" > </a-entity>
               <!-- <a-entity visible="false" id="soccerPlayer" material="shader: flat; src:#transparentVideo;" geometry="primitive: box;
               width: 2;
               height: 2;
