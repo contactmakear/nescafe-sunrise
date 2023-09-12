@@ -107,8 +107,8 @@ transparent: true,
   <button id="clickme" style="position: absolute;
   z-index: 23;    bottom: 0px;
     right: 0px;" type="button" >Click Me!</button>
-  <video   id="penguinsledding" width="640" height="360" crossorigin="anonymous"  playsinline webkit-playsinline  loop="true">
-      <source id="penguinsleddingsrc" src="/new nescafe shrey export webm.webm" />
+  <video   id="penguinsledding" width="640" height="360" crossorigin="anonymous" src="/new nescafe shrey export webm.webm" playsinline webkit-playsinline  loop="true">
+      <!-- <source id="penguinsleddingsrc"  /> -->
   </video>
   <audio id="bgaudio" loop volume="10">
     <source src="/forest green.m4a" type="audio/mp3">
@@ -198,7 +198,7 @@ transparent: true,
         const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         
         if (isSafari) {
-            penguinsleddingsrc.src = "/nescafe-by-shrey-1.mov"
+            penguinsledding.src = "/nescafe-by-shrey-1.mov"
             console.log("safari1")
             alert("safari src updated")
         }
