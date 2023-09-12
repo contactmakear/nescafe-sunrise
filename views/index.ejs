@@ -51,6 +51,13 @@ const videoTexture = new THREE.VideoTexture(data.src);
 videoTexture.format = THREE.RGBAFormat;
 data.transparent = true;
 console.log("init")
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
+if(isSafari){
+        vidframe1.src="/nescafe by shrey-1.mov"
+        console.log("safari")
+      
+
+    }
 // const soccerPlayerVideo = document.querySelector('#penguinsledding')
 clickme.onclick = () => {
     console.log("click")
