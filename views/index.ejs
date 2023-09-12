@@ -41,15 +41,7 @@
     });
 </script>
 <script>
-    const penguinsleddingsrc = document.querySelector("#penguinsleddingsrc")
-      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-      alert("chrome")
-  if (isSafari) {
-    penguinsleddingsrc.src="/nescafe-by-shrey-1.mov"
-        console.log("safari1")
-        alert("safari")
-  }
-    AFRAME.registerShader('transparent-video', {
+AFRAME.registerShader('transparent-video', {
 schema: {
 src: { type: 'map' },
 },
@@ -60,17 +52,19 @@ videoTexture.format = THREE.RGBAFormat;
 data.transparent = true;
 console.log("init")
 
+//not used-------------
 var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 if(isSafari){
     // penguinsledding.src="/nescafe by shrey-1.mov"
         console.log("safari")
         alert("Ios detected")
-      
-
     }
+ //not used--------------
+
 // const soccerPlayerVideo = document.querySelector('#penguinsledding')
 clickme.onclick = () => {
     console.log("click")
+    bgaudio.play()
     soccerPlayer.setAttribute("visible","true")
     penguinsledding.play()
 
@@ -116,6 +110,11 @@ transparent: true,
   <video   id="penguinsledding" width="640" height="360" crossorigin="anonymous"  playsinline webkit-playsinline  loop="true">
       <source id="penguinsleddingsrc" src="/new nescafe shrey export webm.webm" />
   </video>
+  <audio id="bgaudio" loop volume="10">
+    <source src="/forest green.m4a" type="audio/mp3">
+    </source>
+    Your browser does not support the audio element.
+</audio>
   <!-- START OUR A-FRAME SCENE -->
   <a-scene loading-screen="backgroundColor: #344A60">
        <!-- Ask user for camera permissions, display some text if permission is denied -->
@@ -193,7 +192,17 @@ transparent: true,
       <!-- END TRACKING EXPERIENCE -->
   </a-scene> <!-- END SCENE -->
 
-
+<script>
+    const penguinsleddingsrc = document.querySelector("#penguinsleddingsrc")
+    const penguinsledding = document.querySelector("#penguinsledding")
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        
+        if (isSafari) {
+            penguinsledding.children.src = "/nescafe-by-shrey-1.mov"
+            console.log("safari1")
+            alert("safari src updated")
+        }
+</script>
 </body>
 
 </html>
