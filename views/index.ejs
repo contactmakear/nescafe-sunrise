@@ -57,7 +57,7 @@ var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return
 if(isSafari){
     // penguinsledding.src="/nescafe by shrey-1.mov"
         console.log("safari")
-        alert("Ios detected")
+        // alert("Ios detected")
     }
  //not used--------------
 
@@ -104,6 +104,7 @@ transparent: true,
       vr-mode-ui="enabled: false" -->
 
 <body>
+    <div id="bgimage" class="bg"></div>
   <button id="clickme" style="position: absolute;
   z-index: 23;    bottom: 0px;
     right: 0px;" type="button" >Click Me!</button>
@@ -111,10 +112,11 @@ transparent: true,
       <!-- <source id="penguinsleddingsrc"  /> -->
   </video>
   <audio id="bgaudio" loop volume="10">
-    <source src="/forest green.m4a" type="audio/mp3">
+    <source src="/Untitled.mp3" type="audio/mp3">
     </source>
     Your browser does not support the audio element.
 </audio>
+<!-- <div id="bgimage" class="bg"></div> -->
   <!-- START OUR A-FRAME SCENE -->
   <a-scene loading-screen="backgroundColor: #344A60">
        <!-- Ask user for camera permissions, display some text if permission is denied -->
@@ -198,9 +200,14 @@ transparent: true,
         const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         
         if (isSafari) {
+            if (/iPad|iPhone|iPod/.test(navigator.platform) && /^((?!CriOS).)*Version\/(16\.5\.1|16\.5\.2|16\.6)/.test(navigator.userAgent)) {
+                bgimage.style.display="block"
+                clickme.style.display="none"
+                // alert("ios not supported")
+            }
             penguinsledding.src = "/nescafe-by-shrey-1.mov"
-            console.log("safari1")
-            alert("safari src updated")
+            // console.log("safari1")
+            // alert("safari src updated")
         }
 </script>
 </body>
